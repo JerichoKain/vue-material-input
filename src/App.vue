@@ -2,9 +2,10 @@
   <div id="app">
     <md-app>
       <md-app-content>
-        <md-field>
+        <md-field :class="validity.badInput ? 'md-invalid' : ''">
           <label>Number</label>
           <md-input ref="field" v-model="num" type="Number" v-on:input="updateValidity" />
+          <span class="md-error">There is an error</span>
         </md-field>
         Number is: '{{ num }}' <br />
         ValidityState:
